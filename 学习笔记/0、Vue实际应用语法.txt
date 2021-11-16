@@ -1,0 +1,35 @@
+基础语法：
+	1、类型转换：
+		字符串转换为JSON：value = JSON.parse(string_text)
+		
+	2、数据结构操作：
+		1、数组赋值：
+			1、$set的方式：this.$set(this.template_list, 0, "string_text")
+			2、push的方式：this.template_list.push("string_text")
+			3、错误的方式：this.template_list[0] = string_text
+				补充说明：由于 JavaScript 的限制，Vue 不能检测刚刚的数组修改操作
+				
+基础语句：
+	1、if:写法与C语言相同
+		if (display == true){}
+		
+内置函数：
+	1、push与pop函数：
+		1、push：往数组的末尾添加元素
+			display.push("aaa")
+		2、pop：删除数组的末尾元素
+			display.pop()
+	2、length函数：
+		js里面都是对象的思路，每个对象都会对应有元素。length可获取该对象的元素个数
+		var len = display.length()
+				
+web界面：
+	1、文本展示（渲染于web）
+		1、常规渲染：<div>{{选择文字}}</div>
+		2、通过变量的方式渲染：div>{{item}}</div>
+			2.1、变量也可以是结构，可以获取结构体成员的数据：div>{{item.Name}}</div>
+	2、悬停显示信息：
+		1、使用v-bind绑定，悬停时会展示被绑定的数据
+		2、例子如下：
+			悬停在dev.Name上面，会显示display_file_info的返回值
+			<div v-bind:title="display_file_info(dev.Size)" v-on:click="select_device(dev.Name)">{{dev.Name}}</div>
