@@ -1,0 +1,68 @@
+
+顶部栏参考
+	<div id="l1" style="width:50%;float:left;height:30px;background:#676464"> 
+		<button style="float:left" onclick="download_log(path_el)">下载</button> <div id="page_index"></div>
+	</div>
+	<div id="l2" style="width:49%;float:left;height:30px;background:#676464"> 
+		<div>固定不动</div>
+	</div>
+
+Vue	
+	1、基础知识类：
+		1、new Vue对象
+			var template_filter_vue = new Vue({
+			el:"#template_filter_tool",
+			data: {
+				
+			},
+			methods:{
+				temp_input: function(){
+					console.log("temp_input")
+				},
+				temp_select: function(){
+					console.log("temp_select")
+				}
+			},
+		});
+		2、实现功能：前端传递多个数据给后端
+			1、实现办法：通过JSON格式把数据封装好
+			var out_put = {}
+			out_put.value = []
+			把数据存在数组中即可
+			
+	2、特别注意点：
+		1、新建.js文件后需要在html中包含。类似于C语言的包含头文件
+
+		
+	1、添加按钮功能
+		<button @click="download_device(dev)" :style="{background:'cornflowerblue'}">下载</button>
+	2、div相关
+		1、调节样式：class="device_item_cata_log" 后面使用style
+		2、不换行操作：<nobr>{{device_id}}</nobr>
+		3、渲染文本：{{我是文本}}
+			3.1、渲染前面加空格 "\xa0\xa0"
+	3、v-model：
+		用于赋值
+		
+	二、特别注意的地方
+		1、在对象中操作数据
+			正确做法：this.device_id = "adddd"
+			错误做法：device_id = "addd"
+			
+	三、语句解析与理解：
+		1、<input type="text" placeholder="输入设备ID" v-model="search_text" v-on:input="search_func"></input>
+			input：一个输入框
+			type：类型是文字
+			placeholder：在输入框中的提示文字
+			v-model="search_list"：从输入框获取到的文字
+			v-on:input = "search_func"：当输入文字时触发的函数
+		2、<button style="float:left" v-on:click="catalog_download_log(dev)">下载</button>
+			button：生成一个按钮
+			style：设置风格
+			float：left：风格为按钮靠左边显示
+			v-on:click：点击后触发后面的函数
+			catalog_download_log(dev)：对象中的函数（方法）
+			dev：传入参数
+			下载：按钮中显示的文字
+		3
+			
