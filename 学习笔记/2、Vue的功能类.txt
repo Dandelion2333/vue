@@ -1,0 +1,17 @@
+1、条件渲染：
+	1、v-if：
+		1、关键语法：
+			1、关键字的写法：v-if
+			2、JS的关键字switch在HTML中是用""括起来的。其实我不太习惯这样，我会想当然的把它理解为字符串
+			HTML代码：
+			<div id="app">
+				<div v-if="switch">显示打开</div>
+			</div>
+			
+			JS代码：
+			var new_app= new Vue({
+				el:"app",
+				data:{
+					switch:true,
+			})
+	2、v-show：
