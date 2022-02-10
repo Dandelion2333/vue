@@ -1,0 +1,21 @@
+v-的语法：
+    v-html 指令用于输出html代码：<div v-html="message"></div>
+    v-bind 用于绑定数据。可以绑定hidden属性，disabled属性，style属性, color属性，凡是标签有的属性，都可以通过这个方法进行绑定
+        写法：可以单独写成:
+        例子：<div v-bind:class="'class1'">显示样式</div> 绑定了class，后面就可以接上class1，然后在“显示样式”字体中显示class1的样式
+    v-no 绑定事件。代码：<button v-on:click="clickButton()">Click Me</button>
+    v-model 用于把DOM的数据反向输出到vue实例中。
+        例子： <input type="text" v-model="my_data" /> <p>{{my_data}}</p> 从HTML网站输入数据到vue实例中。并且可以通过my_data展现出来
+    v-if 判定语句
+        <p v-if="seen">现在你看到我了</p> seen是vue实例的数据。当seen为true时，文字显示。反之不显示
+
+
+
+其他语法：
+    数据流：vue框架的数据流是单向的，从vue实例-->DOM文档
+
+
+补充：
+    绑定数据的两种方法：
+        v-bind绑定
+        通过实例中的data绑定数据

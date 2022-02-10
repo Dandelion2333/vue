@@ -1,0 +1,33 @@
+npm方法：
+    安装：
+        由于npm安装太慢了，所以采用cnpm
+        # 升级或安装cnpm
+        npm install cnpm -g
+        # 升级或安装npm 
+        cnpm install npm -g
+        # 安装vue
+        cnpm install vue
+        # 全局安装 vue-cli
+        cnpm install --global vue-cli
+    创建：
+        # 创建一个基于 webpack 模板的新项目
+        vue init webpack my-project
+
+    运行：
+        # 进入项目操作-即可通过浏览器访问本地vue项目了
+        $ cd my-project
+        $ cnpm install
+        $ cnpm run dev
+        DONE  Compiled successfully in 4388ms
+
+        > Listening at http://localhost:8080
+
+    发布：
+        指令：npm run build
+        说明：会生成dist文件夹，里面的index.html就是显示发布的项目
+
+遇到问题：
+    1.Error: EPERM: operation not permitted, mkdir
+        通过管理员权限打开cmd.exe即可规避
+    2.通过vscode运行时，cnpm : 无法加载文件 C:\Users\dell\AppData\Roaming\npm\cnpm.ps1，因为在此系统上禁止运行脚本。
+        执行Set-ExecutionPolicy -Scope CurrentUser，给powershell权限
